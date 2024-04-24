@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 5f;
+    public int enemyDamage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,14 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var player = collision.GetComponent<PlayerCollision>();
+        if(player)
+        {
+            player.StartDamageSequence(enemyDamage);
+        }
     }
 
     public void TakeHit(float damage)

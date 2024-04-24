@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,14 +22,19 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health > numOfHealth)
+        Hitpoints();
+    }
+
+    void Hitpoints()
+    {
+        if (health > numOfHealth)
         {
             health = numOfHealth;
         }
 
-        for(int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
-            if(i < health)
+            if (i < health)
             {
                 hearts[i].sprite = fullHeart;
             }
@@ -37,11 +43,11 @@ public class Health : MonoBehaviour
                 hearts[i].sprite = emptyHeart;
             }
 
-            if(i < numOfHealth)
+            if (i < numOfHealth)
             {
                 hearts[i].enabled = true;
             }
-            else 
+            else
             {
                 hearts[i].enabled = false;
             }
