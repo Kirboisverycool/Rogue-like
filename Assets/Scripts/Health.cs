@@ -6,23 +6,53 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    [Header("Health")]
     public int health;
     public int numOfHealth;
-
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Extra Health")]
+    public int extraHealth;
+    public int numOfExtraHealth;
+    public Image[] extraHearts;
+    public Sprite fullExtraHeart;
 
     // Update is called once per frame
     void Update()
     {
         Hitpoints();
+        ExtraHitpoints();
+    }
+
+    private void ExtraHitpoints()
+    {
+        if (health > numOfHealth)
+        {
+            health = numOfHealth;
+        }
+
+        for (int i = 0; i < extraHearts.Length; i++)
+        {
+            if (i < extraHealth)
+            {
+                extraHearts[i].sprite = fullExtraHeart;
+            }
+            else
+            {
+                extraHearts[i].sprite = emptyHeart;
+            }
+
+            if (i < numOfExtraHealth)
+            {
+                extraHearts[i].enabled = true;
+            }
+            else
+            {
+                extraHearts[i].enabled = false;
+            }
+        }
     }
 
     void Hitpoints()

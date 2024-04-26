@@ -34,20 +34,41 @@ public class PlayerCollision : MonoBehaviour
             case "Heal":
                 StartHealSequence();
                 break;
+            case "ExtraHealth":
+                StartExtraHealthSequence();
+                break;
             case "Enemy":
                 StartDamageSequence(dealDamage);
                 break;
         }
     }
 
+    private void StartExtraHealthSequence()
+    {
+        hitpoints.numOfExtraHealth += healAmount;
+        hitpoints.extraHealth = hitpoints.numOfExtraHealth;
+    }
+
     private void StartHealSequence()
     {
+        if (hitpoints.numOfExtraHealth == 10)
+        {
+            return;
+        }
+
         hitpoints.health += healAmount;
     }
 
     public void StartDamageSequence(int damage)
     {
-        hitpoints.health -= damage;
+        if (hitpoints.numOfExtraHealth >= 1)
+        {
+            hitpoints.numOfExtraHealth -= damage;
+        }
+        else
+        {
+            hitpoints.health -= damage;
+        }
     }
 
     private void StartHealthBoostSequence()
