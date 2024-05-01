@@ -9,19 +9,19 @@ public class Player : MonoBehaviour
     public Transform fireballFirePoint;
     public GameObject fireballPrefab;
     public float fireballForce;
-    public float fireballFireRate;
-    float fireballTime;
+    public float fireballCooldownTime;
+    private float nextFireballFireTime = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        fireballTime += Time.deltaTime;
-        float nextFireballFireTime = 1 / fireballFireRate;
-
-        if(Input.GetButtonDown("Fireball") && fireballTime >= nextFireballFireTime)
+        if(Time.time > nextFireballFireTime)
         {
-            Fireball();
-            fireballTime = 0;
+            if (Input.GetButtonDown("Fireball"))
+            {
+                Fireball();
+                nextFireballFireTime = Time.time + fireballCooldownTime;
+            }
         }
     }
 

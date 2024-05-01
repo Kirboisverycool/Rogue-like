@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - ExtraHealth
   - Wall
+  - FastGun
+  - Pistol
+  - Heavy
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - Enemy
   - Wall
   - Pickups
-  - 
-  - 
+  - Weapon Holder
+  - Gun
   - 
   - 
   - 

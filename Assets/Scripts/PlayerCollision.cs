@@ -11,14 +11,6 @@ public class PlayerCollision : MonoBehaviour
     public int healAmount = 1;
     public int dealDamage;
 
-    [Header("IFrames")]
-    public Color flashColour;
-    public Color regularColour;
-    public float flashDuration;
-    public int numberOfFlashes;
-    public Collider2D triggerCollider;
-    public SpriteRenderer mySprite;
-
     private void Start()
     {
         hitpoints = GetComponent<Health>();
