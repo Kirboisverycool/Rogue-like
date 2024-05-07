@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 129262358788460460}
   - component: {fileID: 8160978866525507005}
   - component: {fileID: 6710135929668270719}
-  - component: {fileID: 3949099911050747708}
   m_Layer: 12
   m_Name: Pistol
   m_TagString: Pistol
@@ -131,15 +130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3949099911050747708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5055517324665292103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194d3cec40c27bd4caddce96c80ac9f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
