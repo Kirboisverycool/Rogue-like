@@ -21,10 +21,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Mouvement();
+        Movement();
     }
 
-    private void Mouvement()
+    private void Movement()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer < inLineOfSight)

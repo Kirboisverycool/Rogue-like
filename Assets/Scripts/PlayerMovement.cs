@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Animator animator;
+    private SpriteRenderer sp;
+
     public float moveSpeed = 5f;
     public float dashAmount = 20f;
     public float dashCooldown = 1f;
@@ -15,19 +18,25 @@ public class PlayerMovement : MonoBehaviour
 
     bool isDashing = false;
     bool canDash = true;
+    bool facingRight = true;
 
-    float x;
-    float y;
+    float horizontal;
+    float vertical;
 
     Vector2 mousePos;
+    Vector2 moveDir;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        sp = GetComponent<SpriteRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        x = Input.GetAxisRaw("Horizontal");
-        y = Input.GetAxisRaw("Vertical");
-
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 
         if(Input.GetButtonDown("Dash") && canDash == true)
         {
@@ -38,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Walk();
-        MoveToMouse();
+        //MoveToMouse();
         Dash();
     }
 
@@ -52,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dash()
     {
-        Vector3 dir = new Vector2(x, y).normalized;
+        Vector3 dir = new Vector2(horizontal, vertical).normalized;
 
         if (isDashing == true)
         {
@@ -78,8 +87,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
-        Vector2 moveDir = new Vector2(x, y).normalized;
+        moveDir = new Vector2(horizontal, vertical).normalized;
+
+        animator.SetFloat("speed", Mathf.Abs(horizontal));
 
         rb.MovePosition(rb.position + moveDir * moveSpeed * Time.fixedDeltaTime);
+
+        if(horizontal > 0)
+        {
+            sp.flipX = false;;
+        }
+        if(horizontal < 0)
+        {
+            sp.flipX = true;
+        }
     }
 }

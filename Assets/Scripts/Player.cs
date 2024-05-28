@@ -29,6 +29,6 @@ public class Player : MonoBehaviour
     {
         GameObject fireball = Instantiate(fireballPrefab, fireballFirePoint.position, fireballFirePoint.rotation);
         Rigidbody2D fireballRb = fireball.GetComponent<Rigidbody2D>();
-        fireballRb.AddForce(fireballFirePoint.up * fireballForce, ForceMode2D.Impulse);
+        fireballRb.AddForce(fireballFirePoint.right * fireballForce, ForceMode2D.Impulse);
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - FastGun
   - Pistol
   - Heavy
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Interactable
   - Enemy Bullet
   - Gun
-  - 
+  - Move Bullet
   - 
   - 
   - 
@@ -48,4 +49,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 4089412325
+    locked: 0
+  - name: Pickups
+    uniqueID: 3189486427
+    locked: 0
+  - name: Player
+    uniqueID: 3188771943
+    locked: 0
+  - name: Guns
+    uniqueID: 347944287
+    locked: 0
+  - name: Bullet
+    uniqueID: 2877858131
+    locked: 0
+  - name: Weapon
+    uniqueID: 3230339503
+    locked: 0
+  - name: Enemy
+    uniqueID: 2325661579
+    locked: 0
+  - name: Test
+    uniqueID: 1227203631
+    locked: 0
+  - name: Wall
+    uniqueID: 2523993849
     locked: 0
