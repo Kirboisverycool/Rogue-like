@@ -13,6 +13,7 @@ TagManager:
   - Pistol
   - Heavy
   - Spawner
+  - Gate
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Enemy Bullet
   - Gun
   - Move Bullet
-  - 
+  - Gate
   - 
   - 
   - 

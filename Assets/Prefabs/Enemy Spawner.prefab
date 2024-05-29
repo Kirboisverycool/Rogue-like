@@ -205,19 +205,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7870b5e58455fdb4080c4bcf897a6f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 963729015410128086}
-  - {fileID: 3806573645172557712}
-  - {fileID: 8759693831210983344}
-  - {fileID: 8235910194034474359}
-  - {fileID: 2213477045506370697}
+  spawnPoint: {fileID: 963729015410128086}
   enemies:
   - {fileID: 2241060307051428471, guid: 04ea86e34cd9d6c4a98015e67d2149dc, type: 3}
   - {fileID: 6977189088963348380, guid: db510a2469fff3f40b2c3c30ff63eed7, type: 3}
-  spawnWait: 0.5
-  startWait: 0.1
-  stopSpawning: 1
-  stopTimer: 2.5
+  spawnWait: 1
+  deathWait: 1.5
 --- !u!60 &2697766012288686136
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -247,7 +240,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

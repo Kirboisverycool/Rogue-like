@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDir = new Vector2(horizontal, vertical).normalized;
 
-        animator.SetFloat("speed", Mathf.Abs(horizontal));
+        animator.SetFloat("horizontalSpeed", Mathf.Abs(horizontal));
 
         rb.MovePosition(rb.position + moveDir * moveSpeed * Time.fixedDeltaTime);
 

@@ -133,7 +133,7 @@ MonoBehaviour:
   speed: 3
   shootingRange: 6
   inLineOfSight: 10
-  fireRate: 1
+  fireRate: 0.5
   enemyBullet: {fileID: 8292062541102185150, guid: 65afbb43fcd5cc741be90b82127e889d, type: 3}
   firePos: {fileID: 6285298206936697184}
 --- !u!114 &3369978566548742429
