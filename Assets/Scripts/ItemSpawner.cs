@@ -8,7 +8,8 @@ public class ItemSpawner : MonoBehaviour
     public GameObject[] items;
     int randObject;
     public Transform dropPoint;
-    public Gate gate;
+    private Gate gate;
+    public BoxCollider2D col;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class ItemSpawner : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SpawnItem();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void SpawnItem()

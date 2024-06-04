@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -41,7 +42,15 @@ public class PlayerCollision : MonoBehaviour
             case "Enemy":
                 StartDamageSequence(dealDamage);
                 break;
+            case "Exit":
+                StartNextSceneSequence();
+                break;
         }
+    }
+
+    private void StartNextSceneSequence()
+    {
+        SceneManager.LoadScene("Level 2");
     }
 
     private void StartExtraHealthSequence()
@@ -91,12 +100,12 @@ public class PlayerCollision : MonoBehaviour
 
     private void StartHealthBoostSequence()
     {
-        if(hitpoints.numOfHealth == 10)
+        if(hitpoints.maxHealth == 10)
         {
             return;
         }
 
-        hitpoints.numOfHealth += healthBoostAmount;
-        hitpoints.health = hitpoints.numOfHealth;
+        hitpoints.maxHealth += healthBoostAmount;
+        hitpoints.health = hitpoints.maxHealth;
     }
 }

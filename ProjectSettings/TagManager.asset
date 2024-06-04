@@ -14,6 +14,8 @@ TagManager:
   - Heavy
   - Spawner
   - Gate
+  - ItemSpawner
+  - Exit
   layers:
   - Default
   - TransparentFX
@@ -32,9 +34,9 @@ TagManager:
   - Gun
   - Move Bullet
   - Gate
-  - 
-  - 
-  - 
+  - col
+  - Item Spawner
+  - Exit
   - 
   - 
   - 

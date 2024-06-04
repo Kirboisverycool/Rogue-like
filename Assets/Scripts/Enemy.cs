@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float health = 5f;
     public int enemyDamage = 1;
-    public float speed;
+    public float currentSpeed;
     public float inLineOfSight;
 
     private Transform player;
@@ -26,6 +25,10 @@ public class Enemy : MonoBehaviour
 
     private void Movement()
     {
+        float speed = Random.Range(1, 7);
+
+        currentSpeed = speed;
+
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer < inLineOfSight)
         {

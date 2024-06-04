@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private LayerMask layersEnemyCannotSpawnOn;
 
+    int randEnemy;
+
     private void Awake()
     {
         if(instance == null)
@@ -41,9 +43,10 @@ public class EnemySpawner : MonoBehaviour
             bool isInvalidCollision = false;
             foreach(Collider2D collider in colliders)
             {
-                if(((1 << collider.gameObject.layer) & layersEnemyCannotSpawnOn) != 0 ?)
+                if(((1 << collider.gameObject.layer) & layersEnemyCannotSpawnOn) != 0)
                 {
-
+                    isInvalidCollision = true;
+                    break;
                 }
             }
 

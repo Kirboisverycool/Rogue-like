@@ -6,10 +6,15 @@ using UnityEngine.Tilemaps;
 
 public class Gate : MonoBehaviour
 {
+    public static Gate instance;
+
     [Header("Gate")]
     public GameObject[] enemies;
     public int numOfEnemeies;
     public CompositeCollider2D gateCol;
+
+    [Header("Item")]
+    public BoxCollider2D itemSpawnerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +39,7 @@ public class Gate : MonoBehaviour
             // Close Gate 
             Debug.Log("Close");
             gateCol.isTrigger = false;
+            itemSpawnerCollider.enabled = false;
         }
     }
 
@@ -43,6 +49,7 @@ public class Gate : MonoBehaviour
         {
             Debug.Log("Open");
             gateCol.isTrigger = true;
+            itemSpawnerCollider.enabled = true;
         }
     }
 }

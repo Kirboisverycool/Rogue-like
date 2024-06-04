@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 {
     [Header("Health")]
     public int health;
-    public int numOfHealth;
+    public int maxHealth;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
@@ -28,9 +28,9 @@ public class Health : MonoBehaviour
 
     private void ExtraHitpoints()
     {
-        if (health > numOfHealth)
+        if (health > maxHealth)
         {
-            health = numOfHealth;
+            health = maxHealth;
         }
 
         for (int i = 0; i < extraHearts.Length; i++)
@@ -57,9 +57,9 @@ public class Health : MonoBehaviour
 
     void Hitpoints()
     {
-        if (health > numOfHealth)
+        if (health > maxHealth)
         {
-            health = numOfHealth;
+            health = maxHealth;
         }
 
         for (int i = 0; i < hearts.Length; i++)
@@ -73,7 +73,7 @@ public class Health : MonoBehaviour
                 hearts[i].sprite = emptyHeart;
             }
 
-            if (i < numOfHealth)
+            if (i < maxHealth)
             {
                 hearts[i].enabled = true;
             }
