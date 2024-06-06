@@ -11,6 +11,7 @@ public class PlayerCollision : MonoBehaviour
 
     private Health hitpoints;
 
+    public float levelLoadWaitTime = 1f;
     public int healthBoostAmount = 1;
     public int healAmount = 1;
     public int dealDamage;
@@ -18,8 +19,11 @@ public class PlayerCollision : MonoBehaviour
 
     public Rigidbody2D playerRb;
 
+    int currentSceneIndex;
+
     private void Start()
     {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         hitpoints = GetComponent<Health>();
         playerRb = GetComponent<Rigidbody2D>();
         rend = GetComponent<Renderer>();
@@ -50,7 +54,19 @@ public class PlayerCollision : MonoBehaviour
 
     private void StartNextSceneSequence()
     {
-        SceneManager.LoadScene("Level 2");
+        Invoke("LoadNextScene", levelLoadWaitTime);
+    }
+
+    private void LoadNextScene()
+    {
+        if (SceneManager.sceneCountInBuildSettings - 1 == currentSceneIndex)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
     }
 
     private void StartExtraHealthSequence()

@@ -37,7 +37,6 @@ public class Gate : MonoBehaviour
         if (numOfEnemeies > 0)
         {
             // Close Gate 
-            Debug.Log("Close");
             gateCol.isTrigger = false;
             itemSpawnerCollider.enabled = false;
         }
@@ -47,7 +46,6 @@ public class Gate : MonoBehaviour
     {
         if(numOfEnemeies <= 0)
         {
-            Debug.Log("Open");
             gateCol.isTrigger = true;
             itemSpawnerCollider.enabled = true;
         }

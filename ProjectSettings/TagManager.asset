@@ -16,6 +16,7 @@ TagManager:
   - Gate
   - ItemSpawner
   - Exit
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - col
   - Item Spawner
   - Exit
-  - 
+  - NPC
   - 
   - 
   - 
@@ -61,6 +62,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3188771943
+    locked: 0
+  - name: NPC
+    uniqueID: 1035617945
     locked: 0
   - name: Guns
     uniqueID: 347944287

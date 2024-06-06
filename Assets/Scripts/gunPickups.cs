@@ -6,6 +6,7 @@ using UnityEngine;
 public class GunPickups : MonoBehaviour
 {
     public int selectedWeapon;
+    public int currentWeapon;
 
     public Transform dropPoint;
     public GameObject pistolPrefab;
@@ -17,6 +18,13 @@ public class GunPickups : MonoBehaviour
     public bool isTouchingFastPickup = false;
     public bool isTouchingHeavyPickup = false;
     public bool isTouchingShotgunPickup = false;
+
+    private Dialogue dialogue;
+
+    private void Start()
+    {
+        currentWeapon = selectedWeapon;
+    }
 
     private void Update()
     {
@@ -60,6 +68,7 @@ public class GunPickups : MonoBehaviour
         }
 
         selectedWeapon = 3;
+        currentWeapon = 3;
 
 
         Destroy(GameObject.FindWithTag("Shotgun"));
@@ -85,6 +94,7 @@ public class GunPickups : MonoBehaviour
         }
 
         selectedWeapon = 2;
+        currentWeapon = 2;
 
 
         Destroy(GameObject.FindWithTag("Heavy"));
@@ -110,6 +120,7 @@ public class GunPickups : MonoBehaviour
         }
 
         selectedWeapon = 1;
+        currentWeapon = 1;
 
 
         Destroy(GameObject.FindWithTag("FastGun"));
@@ -135,6 +146,7 @@ public class GunPickups : MonoBehaviour
         }
 
         selectedWeapon = 0;
+        currentWeapon = 0;
 
 
         Destroy(GameObject.FindWithTag("Pistol"));
