@@ -89,8 +89,8 @@ GameObject:
   - component: {fileID: 3939039003447592733}
   - component: {fileID: 7903730565117002983}
   - component: {fileID: 1071446269342594863}
-  - component: {fileID: 3369978566548742429}
   - component: {fileID: 897615758985991926}
+  - component: {fileID: 69183855818123232}
   m_Layer: 8
   m_Name: Shooting Enemy
   m_TagString: Enemy
@@ -113,7 +113,7 @@ Transform:
   - {fileID: 6285298206936697184}
   - {fileID: 5282596460325401556}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3939039003447592733
 SpriteRenderer:
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1969305717
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -9074539206338946419, guid: c80534141f80d28489b1ef92f8ff7d99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -208,28 +208,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   enemyDamage: 1
-  speed: 0
-  shootingRange: 0
+  speed: 4
+  shootingRange: 8
   inLineOfSight: 10
   fireRate: 0.5
   enemyBullet: {fileID: 8292062541102185150, guid: 65afbb43fcd5cc741be90b82127e889d, type: 3}
   firePos: {fileID: 6285298206936697184}
---- !u!114 &3369978566548742429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6977189088963348380}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 903c0b4950c08af4e90046e710b8deac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  enemyDamage: 0
-  currentSpeed: 0
-  inLineOfSight: 0
+  profile: {fileID: 11400000, guid: 27769a09ef98e804d86558189025530c, type: 2}
 --- !u!60 &897615758985991926
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -282,6 +267,59 @@ PolygonCollider2D:
       - {x: 0.5591334, y: -0.1837832}
       - {x: 0.45488334, y: 0.045416817}
   m_UseDelaunayMesh: 0
+--- !u!114 &69183855818123232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977189088963348380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &8869925001147677740
 GameObject:
   m_ObjectHideFlags: 0

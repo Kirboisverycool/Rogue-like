@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,11 +11,16 @@ public class Enemy : MonoBehaviour
     public float inLineOfSight;
 
     private Transform player;
+    private CinemachineImpulseSource impulseSource;
+
+    [SerializeField] private ScreenShakeProfile profile;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +59,12 @@ public class Enemy : MonoBehaviour
 
     public void TakeHit(float damage)
     {
+        //ScreenShake.instance.CameraShake(impulseSource);
+        //if(ScreenShake.instance.canShake)
+        //{
+            ScreenShake.instance.ScreenShakeFromProfile(profile, impulseSource);
+        //}
+
         health -= damage;
 
         if(health <= 0)

@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
     private GunPickups gunPickups;
+    private CinemachineImpulseSource impulseSource;
+
+    [SerializeField] private ScreenShakeProfile profile;
 
     public float bulletForce = 20f;
     public float fireRate;
@@ -16,11 +20,13 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
+        impulseSource = GetComponent<CinemachineImpulseSource>();
+
         gunPickups = GetComponent<GunPickups>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         time += Time.deltaTime;
 
@@ -30,6 +36,7 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
             time = 0;
+            ScreenShake.instance.ScreenShakeFromProfile(profile, impulseSource);
         }
     }
 

@@ -1,33 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public GameObject hitEffect;
-    public float damage = 5f;
-    public float fireballTime = 2f;
-    public float effectTime;
+    [Header("Fireball")]
+    public Transform fireballFirePoint;
+    public GameObject fireballPrefab;
+    public float fireballForce;
+    public float fireballCooldownTime;
+    private float nextFireballFireTime = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, fireballTime);
+        if(Time.time > nextFireballFireTime)
+        {
+            if (Input.GetButtonDown("Fireball"))
+            {
+                ShootFireball();
+                nextFireballFireTime = Time.time + fireballCooldownTime;
+            }
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void ShootFireball()
     {
-        var enemy = collision.GetComponent<Enemy>();
-        if (enemy)
-        {
-            enemy.TakeHit(damage);
-        }
-
-        if (collision.CompareTag("Wall") == true)
-        {
-            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Destroy(effect, effectTime);
-            Destroy(gameObject);
-        }
+        GameObject fireball = Instantiate(fireballPrefab, fireballFirePoint.position, fireballFirePoint.rotation);
+        Rigidbody2D fireballRb = fireball.GetComponent<Rigidbody2D>();
+        fireballRb.AddForce(fireballFirePoint.right * fireballForce, ForceMode2D.Impulse);
     }
 }
