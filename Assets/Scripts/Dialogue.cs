@@ -20,7 +20,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z) && playerIsClose == true)
+        if(Input.GetKeyDown(KeyCode.G) && playerIsClose == true)
         {
             if(dialoguePanel.activeInHierarchy)
             {

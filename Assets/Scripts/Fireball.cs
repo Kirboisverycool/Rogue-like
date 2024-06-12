@@ -17,7 +17,7 @@ public class Fireball : MonoBehaviour
     {
         if(Time.time > nextFireballFireTime)
         {
-            if (Input.GetButtonDown("Fireball"))
+            if (Input.GetButtonDown("Ability"))
             {
                 ShootFireball();
                 nextFireballFireTime = Time.time + fireballCooldownTime;

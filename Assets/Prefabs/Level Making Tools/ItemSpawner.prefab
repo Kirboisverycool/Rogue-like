@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3548687358782656467}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.96, y: -17.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2699295202095067961}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &749333763638719034
 MonoBehaviour:
@@ -50,6 +50,9 @@ MonoBehaviour:
   - {fileID: 5055517324665292103, guid: 133d83962985e1c4a9cfd3a645fc67a7, type: 3}
   - {fileID: 5055517324665292103, guid: fa2cd5a0ec0bad741bc4efa07cba1c2a, type: 3}
   - {fileID: 2261327316344013583, guid: 603cbad63aeacad4ebf26d023ce167dd, type: 3}
+  - {fileID: 5055517324665292103, guid: ec8017a11aab96f42837b5cd4bfc3535, type: 3}
+  - {fileID: 5675773989248454170, guid: 8a79b2047480a6c4bbf4b6ad8a7d8186, type: 3}
+  - {fileID: 8614371796704912030, guid: 18edcdc9d9afacc4aa1cab3824827e90, type: 3}
   dropPoint: {fileID: 2699295202095067961}
   col: {fileID: 7290804536230060171}
 --- !u!61 &7290804536230060171

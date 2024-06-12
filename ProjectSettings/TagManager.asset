@@ -17,6 +17,8 @@ TagManager:
   - ItemSpawner
   - Exit
   - NPC
+  - ChargeGun
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -39,7 +41,7 @@ TagManager:
   - Item Spawner
   - Exit
   - NPC
-  - 
+  - Shield
   - 
   - 
   - 

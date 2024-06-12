@@ -12,12 +12,12 @@ public class GunPickups : MonoBehaviour
     public GameObject pistolPrefab;
     public GameObject fastPrefab;
     public GameObject heavyPrefab;
-    public GameObject shotgunPrefab;
+    public GameObject chargePrefab;
 
     public bool isTouchingPistolPickup = false;
     public bool isTouchingFastPickup = false;
     public bool isTouchingHeavyPickup = false;
-    public bool isTouchingShotgunPickup = false;
+    public bool isTouchingChargePickup = false;
 
     private Dialogue dialogue;
 
@@ -42,13 +42,13 @@ public class GunPickups : MonoBehaviour
         {
             PickupHeavy();
         }
-        if (isTouchingShotgunPickup == true && Input.GetKeyDown(KeyCode.G))
+        if (isTouchingChargePickup == true && Input.GetKeyDown(KeyCode.G))
         {
-            PickupShotgun();
+            PickupChargeGun();
         }
     }
 
-    private void PickupShotgun()
+    private void PickupShield()
     {
         if (selectedWeapon == 1)
         {
@@ -64,14 +64,40 @@ public class GunPickups : MonoBehaviour
         }
         if (selectedWeapon == 3)
         {
-            Instantiate(shotgunPrefab, dropPoint.position, dropPoint.rotation);
+            Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
+        }
+
+        selectedWeapon = 4;
+        currentWeapon = 4;
+
+
+        Destroy(GameObject.FindWithTag("Shield"));
+    }
+
+    private void PickupChargeGun()
+    {
+        if (selectedWeapon == 1)
+        {
+            Instantiate(fastPrefab, dropPoint.position, dropPoint.rotation);
+        }
+        if (selectedWeapon == 0)
+        {
+            Instantiate(pistolPrefab, dropPoint.position, dropPoint.rotation);
+        }
+        if (selectedWeapon == 2)
+        {
+            Instantiate(heavyPrefab, dropPoint.position, dropPoint.rotation);
+        }
+        if (selectedWeapon == 3)
+        {
+            Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
         }
 
         selectedWeapon = 3;
         currentWeapon = 3;
 
 
-        Destroy(GameObject.FindWithTag("Shotgun"));
+        Destroy(GameObject.FindWithTag("ChargeGun"));
     }
 
     private void PickupHeavy()
@@ -90,7 +116,7 @@ public class GunPickups : MonoBehaviour
         }
         if (selectedWeapon == 3)
         {
-            Instantiate(shotgunPrefab, dropPoint.position, dropPoint.rotation);
+            Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
         }
 
         selectedWeapon = 2;
@@ -116,7 +142,7 @@ public class GunPickups : MonoBehaviour
         }
         if (selectedWeapon == 3)
         {
-            Instantiate(shotgunPrefab, dropPoint.position, dropPoint.rotation);
+            Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
         }
 
         selectedWeapon = 1;
@@ -142,7 +168,7 @@ public class GunPickups : MonoBehaviour
         }
         if (selectedWeapon == 3)
         {
-            Instantiate(shotgunPrefab, dropPoint.position, dropPoint.rotation);
+            Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
         }
 
         selectedWeapon = 0;
@@ -169,9 +195,9 @@ public class GunPickups : MonoBehaviour
             isTouchingHeavyPickup = true;
         }
 
-        if (collision.gameObject.tag == "Shotgun")
+        if (collision.gameObject.tag == "ChargeGun")
         {
-            isTouchingShotgunPickup = true;
+            isTouchingChargePickup = true;
         }
     }
 
@@ -192,9 +218,9 @@ public class GunPickups : MonoBehaviour
             isTouchingHeavyPickup = false;
         }
 
-        if (collision.gameObject.tag == "Shotgun")
+        if (collision.gameObject.tag == "ChargeGun")
         {
-            isTouchingShotgunPickup = false;
+            isTouchingChargePickup = false;
         }
     }
 
