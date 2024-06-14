@@ -129,6 +129,7 @@ MonoBehaviour:
   hitEffect: {fileID: 8825069640805595053, guid: f1e26a5782acf864ca5098ae361bb08c, type: 3}
   effectTime: 0.4
   bulletDamage: 1
+  slowDownEnemySpeed: 1
 --- !u!70 &-5793237413996814358
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

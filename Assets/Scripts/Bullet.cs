@@ -7,6 +7,12 @@ public class Bullet : MonoBehaviour
     public GameObject hitEffect;
     public float effectTime = 0.5f;
     public float bulletDamage = 1f;
+    public float slowDownEnemySpeed;
+
+    private void Start()
+    {
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,11 +20,11 @@ public class Bullet : MonoBehaviour
         var shootingEnemy = collision.GetComponent<ShootingEnemy>();
         if(enemy)
         {
-            enemy.TakeHit(bulletDamage);
+            enemy.TakeHit(bulletDamage, slowDownEnemySpeed);
         }
         if(shootingEnemy)
         {
-            shootingEnemy.TakeHit(bulletDamage);
+            shootingEnemy.TakeHit(bulletDamage, slowDownEnemySpeed);
         }
 
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);

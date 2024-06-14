@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6963904604762748925}
   - component: {fileID: 6250236767060807466}
   - component: {fileID: 2284196165595252246}
-  - component: {fileID: -7345424208006659144}
-  - component: {fileID: -4185811156231308411}
-  m_Layer: 15
-  m_Name: Enemy Move Bullet
-  m_TagString: Enemy
+  - component: {fileID: 8701314643964564494}
+  - component: {fileID: -5793237413996814358}
+  m_Layer: 7
+  m_Name: Freeze Bullet
+  m_TagString: FreezeBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7345424208006659144
+--- !u!114 &8701314643964564494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,13 +123,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8292062541102185150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb80eecf068a6104c983397919ea0370, type: 3}
+  m_Script: {fileID: 11500000, guid: 37038da8df1e5714eb199debd44b4df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletDamage: 1
-  bulletSpeed: 7
-  isPlayerMoving: 0
---- !u!70 &-4185811156231308411
+  hitEffect: {fileID: 8825069640805595053, guid: f1e26a5782acf864ca5098ae361bb08c, type: 3}
+  effectTime: 0.4
+  bulletDamage: 1
+  slowDownEnemySpeed: 2
+--- !u!70 &-5793237413996814358
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,6 +162,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016745389, y: -0.01193078}
-  m_Size: {x: 0.9506423, y: 1.0159948}
+  m_Offset: {x: -0.013479264, y: -0.009807756}
+  m_Size: {x: 0.923334, y: 1.0143963}
   m_Direction: 0

@@ -21,11 +21,11 @@ public class FireballProjectile : MonoBehaviour
         var shootingEnemy = collision.GetComponent<ShootingEnemy>();
         if (enemy)
         {
-            enemy.TakeHit(damage);
+            enemy.TakeHit(damage, 1);
         }
         if(shootingEnemy)
         {
-            shootingEnemy.TakeHit(damage);
+            shootingEnemy.TakeHit(damage, 1);
         }
 
         if (collision.CompareTag("Wall") == true)

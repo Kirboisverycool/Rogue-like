@@ -19,6 +19,7 @@ TagManager:
   - NPC
   - ChargeGun
   - Shield
+  - FreezeBullet
   layers:
   - Default
   - TransparentFX

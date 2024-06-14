@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetButtonDown("Dash") && canDash == true)
+        if (Input.GetButtonDown("Dash") && canDash == true)
         {
             StartCoroutine(InitiateDash());
         }
@@ -90,14 +90,17 @@ public class PlayerMovement : MonoBehaviour
         moveDir = new Vector2(horizontal, vertical).normalized;
 
         animator.SetFloat("horizontalSpeed", Mathf.Abs(horizontal));
+        animator.SetFloat("verticalSpeed", Mathf.Abs(vertical));
 
         rb.MovePosition(rb.position + moveDir * moveSpeed * Time.fixedDeltaTime);
 
-        if(horizontal > 0)
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if(mousePos.x > transform.position.x)
         {
-            sp.flipX = false;;
+            sp.flipX = false;
         }
-        if(horizontal < 0)
+        if(mousePos.x < transform.position.x)
         {
             sp.flipX = true;
         }

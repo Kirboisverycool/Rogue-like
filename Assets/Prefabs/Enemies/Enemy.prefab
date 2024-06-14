@@ -209,6 +209,10 @@ MonoBehaviour:
   enemyDamage: 1
   currentSpeed: 0
   inLineOfSight: 10
+  speed: 0
+  slowDownTime: 0
+  isSlowed: 0
+  slowDownTimeSpeed: 0
   profile: {fileID: 11400000, guid: bc271c1aae185564bb061f3d5d41e8e6, type: 2}
 --- !u!60 &2590445242018584089
 PolygonCollider2D:

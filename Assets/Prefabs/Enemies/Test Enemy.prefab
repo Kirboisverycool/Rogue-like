@@ -209,9 +209,13 @@ MonoBehaviour:
   health: 100
   enemyDamage: 0
   speed: 4
+  slowDownTime: 0
+  isSlowed: 0
+  slowDownTimeSpeed: 1
   shootingRange: 0
   inLineOfSight: 0
   fireRate: 0.5
+  hit: 0
   enemyBullet: {fileID: 8292062541102185150, guid: 65afbb43fcd5cc741be90b82127e889d, type: 3}
   firePos: {fileID: 6285298206936697184}
   profile: {fileID: 11400000, guid: 27769a09ef98e804d86558189025530c, type: 2}

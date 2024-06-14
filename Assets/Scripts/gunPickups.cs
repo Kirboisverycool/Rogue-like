@@ -13,11 +13,13 @@ public class GunPickups : MonoBehaviour
     public GameObject fastPrefab;
     public GameObject heavyPrefab;
     public GameObject chargePrefab;
+    public GameObject freezePrefab;
 
     public bool isTouchingPistolPickup = false;
     public bool isTouchingFastPickup = false;
     public bool isTouchingHeavyPickup = false;
     public bool isTouchingChargePickup = false;
+    public bool isTouchingFreezePickup = false;
 
     private Dialogue dialogue;
 
@@ -46,9 +48,13 @@ public class GunPickups : MonoBehaviour
         {
             PickupChargeGun();
         }
+        if (isTouchingFreezePickup == true && Input.GetKeyDown(KeyCode.G))
+        {
+            PickupFreeze();
+        }
     }
 
-    private void PickupShield()
+    private void PickupFreeze()
     {
         if (selectedWeapon == 1)
         {
@@ -65,6 +71,10 @@ public class GunPickups : MonoBehaviour
         if (selectedWeapon == 3)
         {
             Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
+        }
+        if (selectedWeapon == 4)
+        {
+            Instantiate(freezePrefab, dropPoint.position, dropPoint.rotation);
         }
 
         selectedWeapon = 4;
@@ -92,6 +102,10 @@ public class GunPickups : MonoBehaviour
         {
             Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
         }
+        if (selectedWeapon == 4)
+        {
+            Instantiate(freezePrefab, dropPoint.position, dropPoint.rotation);
+        }
 
         selectedWeapon = 3;
         currentWeapon = 3;
@@ -117,6 +131,10 @@ public class GunPickups : MonoBehaviour
         if (selectedWeapon == 3)
         {
             Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
+        }
+        if (selectedWeapon == 4)
+        {
+            Instantiate(freezePrefab, dropPoint.position, dropPoint.rotation);
         }
 
         selectedWeapon = 2;
@@ -144,6 +162,10 @@ public class GunPickups : MonoBehaviour
         {
             Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
         }
+        if (selectedWeapon == 4)
+        {
+            Instantiate(freezePrefab, dropPoint.position, dropPoint.rotation);
+        }
 
         selectedWeapon = 1;
         currentWeapon = 1;
@@ -169,6 +191,10 @@ public class GunPickups : MonoBehaviour
         if (selectedWeapon == 3)
         {
             Instantiate(chargePrefab, dropPoint.position, dropPoint.rotation);
+        }
+        if (selectedWeapon == 4)
+        {
+            Instantiate(freezePrefab, dropPoint.position, dropPoint.rotation);
         }
 
         selectedWeapon = 0;
