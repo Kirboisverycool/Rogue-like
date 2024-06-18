@@ -81,7 +81,7 @@ public class GunPickups : MonoBehaviour
         currentWeapon = 4;
 
 
-        Destroy(GameObject.FindWithTag("Shield"));
+        Destroy(GameObject.FindWithTag("FreezeGun"));
     }
 
     private void PickupChargeGun()
@@ -225,6 +225,11 @@ public class GunPickups : MonoBehaviour
         {
             isTouchingChargePickup = true;
         }
+
+        if (collision.gameObject.tag == "FreezeGun")
+        {
+            isTouchingFreezePickup = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -247,6 +252,11 @@ public class GunPickups : MonoBehaviour
         if (collision.gameObject.tag == "ChargeGun")
         {
             isTouchingChargePickup = false;
+        }
+
+        if (collision.gameObject.tag == "FreezeGun")
+        {
+            isTouchingFreezePickup = false;
         }
     }
 

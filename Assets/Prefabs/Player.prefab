@@ -204,17 +204,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a590e52d7f430aa478b2faa5afe9fe01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 4
+  selectedWeapon: 0
   currentWeapon: 0
   dropPoint: {fileID: 4887732799790557480}
   pistolPrefab: {fileID: 5055517324665292103, guid: fa2cd5a0ec0bad741bc4efa07cba1c2a, type: 3}
   fastPrefab: {fileID: 2261327316344013583, guid: 603cbad63aeacad4ebf26d023ce167dd, type: 3}
   heavyPrefab: {fileID: 5055517324665292103, guid: 133d83962985e1c4a9cfd3a645fc67a7, type: 3}
   chargePrefab: {fileID: 5055517324665292103, guid: ec8017a11aab96f42837b5cd4bfc3535, type: 3}
+  freezePrefab: {fileID: 5055517324665292103, guid: 47a0266a17e48784f87e16fd0629d2bc, type: 3}
   isTouchingPistolPickup: 0
   isTouchingFastPickup: 0
   isTouchingHeavyPickup: 0
   isTouchingChargePickup: 0
+  isTouchingFreezePickup: 0
 --- !u!70 &591797124154620183
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1900,7 +1902,7 @@ SpriteRenderer:
   m_SortingLayerID: -1064627793
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa669d1645679b349b7e722faffe6810, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 553d3ecba0ae6954c96a58fc788ace3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

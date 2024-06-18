@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -24,6 +25,16 @@ public class Health : MonoBehaviour
     {
         Hitpoints();
         ExtraHitpoints();
+
+        if (health == 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        SceneManager.LoadScene("Lose Scene");
     }
 
     private void ExtraHitpoints()
